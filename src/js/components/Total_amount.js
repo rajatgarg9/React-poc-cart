@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-import "../../css/components/total_amount.css";
 
 var globVarObj = require("../../data/global_variables.json");
 
 export const TotalAmount =(props) => {    
     return (
-        <div className="total-amount-displayer-container">
+        <div id="total-amount-displayer-container">
             <div>
                 <h1>Your Cart</h1>
             </div>

@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 import ProductItemCard from "./Product_item_card";
 
-import "../../css/components/selected_item_container.css";
-
 export const SelectedItemContainer = (props) => {
 
 
@@ -33,7 +31,7 @@ export const SelectedItemContainer = (props) => {
     }
 
     return (
-        <div className="selected-item-container-component">
+        <div id="selected-item-container-comp">
             {_selectedItemContainerComponent}
         </div>
     );

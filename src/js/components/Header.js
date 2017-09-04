@@ -1,7 +1,5 @@
 import React from "react";
 
-import "../../css/components/header.css";
-
 var globVarObj = require("../../data/global_variables.json");
 
 export const CartHeader = () => {

@@ -4,8 +4,6 @@ import _ from "lodash";
 
 import ProductItemCard from "./Product_item_card";
 
-import "../../css/components/product_list_container.css";
-
 var productItemListObj = require("../../data/product_list.json");
 
 export const ProductListContainer = (props) => {
@@ -13,7 +11,7 @@ export const ProductListContainer = (props) => {
 
 
     return (
-        <div className="product-list-container">
+        <div id="product-list-container">
             <div>
                 <h3>PRODUCT LIST</h3>
             </div>

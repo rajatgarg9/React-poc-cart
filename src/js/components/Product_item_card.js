@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "../../css/components/product_item_card.css";
 import _ from "lodash";
 
 var globVarObj = require("../../data/global_variables.json");
@@ -61,6 +60,7 @@ class ProductItemCard extends React.Component {
 
     render() {
         return (
+        <div id="product-card-comp">    
             <div className="product-item-card">
                 <div className="product-itm-img-con">
                     <img src={this.props.itemData.product_img} alt="150 * 150" />
@@ -79,6 +79,7 @@ class ProductItemCard extends React.Component {
                     </div>
                 </div>
             </div>
+        </div>
         );
     }
 }
