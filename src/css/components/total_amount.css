@@ -1,0 +1,7 @@
+.amount-displayer{
+    background: green;
+    padding: 0px 15px;
+    display: inline-block;
+    color: white;
+    border-radius: 6%;
+}
