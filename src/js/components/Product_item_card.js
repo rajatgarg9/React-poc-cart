@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
 import _ from "lodash";
-
-var globVarObj = require("../../data/global_variables.json");
-
 
 class ProductItemCard extends React.Component {
 
@@ -15,6 +13,8 @@ class ProductItemCard extends React.Component {
             cart_btn_class: props.productItemCardButtonClass
         }
     }
+
+
 
     /**
         * Fire when click on "Add to Cart" and "Remove Cart" button and update total price of cart and Update number of selected item in cart 

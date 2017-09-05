@@ -4,8 +4,6 @@ import _ from "lodash";
 
 import ProductItemCard from "./Product_item_card";
 
-var productItemListObj = require("../../data/product_list.json");
-
 export const ProductListContainer = (props) => {
 
 
@@ -18,10 +16,10 @@ export const ProductListContainer = (props) => {
             <div className="product-items-list">
 
                 {
-                    productItemListObj.product_list.map(
+                    props.productItemListObj.product_list.map(
                         (item) => {
 
-                            let productItemCardButtonText = (_.findIndex(props.selectedItemCartList, function (o) { return o.id === item.id }) === -1) ? "Add to Cart" : "Remove Cart",
+                            let productItemCardButtonText = (_.findIndex(props.selectedItemCartList, function (o) { return o.id === item.id }) === -1) ? props.globVarObj.global_keys.add_item : props.globVarObj.global_keys.remove_item,
                                 productItemCardButtonClass = (_.findIndex(props.selectedItemCartList, function (o) { return o.id === item.id }) === -1) ? "add-cart-btn" : "remove-cart-btn";
 
                             return <ProductItemCard key={item.id}
@@ -44,5 +42,7 @@ export const ProductListContainer = (props) => {
 ProductListContainer.propTypes = {
     cartTotalPriceUpdater: PropTypes.func,
     selectedItemCartList: PropTypes.array,
-    selectedItemCartListHandler: PropTypes.func
+    selectedItemCartListHandler: PropTypes.func,
+    globVarObj:PropTypes.object,
+    productItemListObj:PropTypes.object
 }

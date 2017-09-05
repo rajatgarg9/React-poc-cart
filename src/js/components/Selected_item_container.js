@@ -7,7 +7,7 @@ export const SelectedItemContainer = (props) => {
 
 
 
-    let _productItemCardButtonText = "Remove Cart",
+    let _productItemCardButtonText = props.globVarObj.global_keys.remove_item,
         _productItemCardButtonClass = "remove-cart-btn",
         _selectedItemContainerComponent = "";
 
@@ -40,5 +40,6 @@ export const SelectedItemContainer = (props) => {
 SelectedItemContainer.propTypes = {
     cartTotalPriceUpdater: PropTypes.func,
     selectedItemCartList: PropTypes.array,
-    selectedItemCartListHandler: PropTypes.func
+    selectedItemCartListHandler: PropTypes.func,
+    globVarObj:PropTypes.object
 }
