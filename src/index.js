@@ -39,10 +39,10 @@ class App extends React.Component {
     * @return {undefined} 
 */
     componentDidMount(){
-        let that=this;
+        
         axios.get('http://localhost:3001/data?file=product')
-        .then(function (response) {
-                that.setState({
+        .then((response) => {
+                this.setState({
                     productItemListObj:response.data
                 });
           })
@@ -50,8 +50,8 @@ class App extends React.Component {
             console.log(`messsage for product list file: ${error}`);
           });
           axios.get('http://localhost:3001/data?file=global_var')
-          .then(function (response) {
-                  that.setState({
+          .then((response) => {
+                  this.setState({
                     globVarObj:response.data
                   });
             })

@@ -26,15 +26,7 @@ app.get('/data', function (req, res) {
     
 });
 
-
-app.post('/data', function (req, res) {
-    console.log("dd");
-
-   res.setHeader("Content-Type", "text/json");
-   res.sendFile(path.join(__dirname, 'src','data','product_list.json'));
-  });
   
-
 
 
 var server = app.listen(3001);
