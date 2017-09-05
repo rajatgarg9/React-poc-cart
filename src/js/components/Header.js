@@ -1,13 +1,11 @@
 import React from "react";
 
-var globVarObj = require("../../data/global_variables.json");
-
 export const CartHeader = (props) => {
 
     return (
         <div className="cart-name-head">
             <h1>
-                {globVarObj.global_keys.shopping_cart}
+                "Shopping Cart"
             </h1>
         </div>
     );
