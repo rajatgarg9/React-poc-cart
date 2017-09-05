@@ -18,18 +18,18 @@ class ProductItemCard extends React.Component {
 
     /**
         * Fire when click on "Add to Cart" and "Remove Cart" button and update total price of cart and Update number of selected item in cart 
-        * @param {string} addCartClass
-        * @param {string} removeCartClass
-        * @param {Object} itemData
+        * @param {string} addCartClass -- used for check point on cart button
+        * @param {string} removeCartClass -- used for check point on cart button
+        * @param {Object} itemData -- used for check point on cart button
         * @return {undefined} 
      */
     cartButtonActionHandler(addCartClass, removeCartClass, itemData) {
 
-        if (this.state.cart_btn_class === "add-cart-btn" && _.findIndex(this.props.selectedItemCartList, function (o) { return o.id === itemData.id }) === -1) {
+        if (this.state.cart_btn_class === addCartClass && _.findIndex(this.props.selectedItemCartList, function (o) { return o.id === itemData.id }) === -1) {
             this.props.cartTotalPriceUpdater(Number(itemData.product_price), "add");
             this.props.selectedItemCartListHandler("add", { ...itemData });
         }
-        else if (this.state.cart_btn_class === "remove-cart-btn" && _.findIndex(this.props.selectedItemCartList, function (o) { return o.id === itemData.id }) !== -1) {
+        else if (this.state.cart_btn_class === removeCartClass && _.findIndex(this.props.selectedItemCartList, function (o) { return o.id === itemData.id }) !== -1) {
             this.props.cartTotalPriceUpdater(Number(itemData.product_price), "sub");
             this.props.selectedItemCartListHandler("sub", { ...itemData });
         }
@@ -37,8 +37,8 @@ class ProductItemCard extends React.Component {
 
     /**
         * on Call will  chage the Product button color and text
-        * @param {string} newClass
-        * @param {string} removeCartClass
+        * @param {string} newClass -- set bgcolor of product button based on applied class
+        * @param {string} buttonText -- set text of product button based on arguments
         * @return {undefined} 
      */
     cartButtonStateSetter(newClass, buttonText) {
@@ -49,7 +49,7 @@ class ProductItemCard extends React.Component {
     }
     /**
         * Componet life cycle function and will change product button text and color based on the props
-        * @param {object} nextProps
+        * @param {object} nextProps  -- contain all the new props
         * @return {undefined} 
      */
     componentWillReceiveProps(nextProps) {

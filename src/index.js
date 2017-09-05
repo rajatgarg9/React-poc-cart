@@ -33,8 +33,13 @@ class App extends React.Component {
     selectedItemCartList= []
     
 
+/**
+    * Component life cycle function for fetching data from server and then set state accordingly
+    * @param {undefined}
+    * @return {undefined} 
+*/
     componentDidMount(){
-        var that=this;
+        let that=this;
         axios.get('http://localhost:3001/data?file=product')
         .then(function (response) {
                 that.setState({
@@ -49,7 +54,6 @@ class App extends React.Component {
                   that.setState({
                     globVarObj:response.data
                   });
-                  console.log(that.state.globVarObj.global_keys.shopping_cart);
             })
             .catch(function (error) {
               console.log(`messsage for Global file: ${error}`);
@@ -58,8 +62,8 @@ class App extends React.Component {
 
     /**
     * Calculate total amount of selected products in the cart
-    * @param {number} newitemPrice
-    * @param {string} action
+    * @param {number} newitemPrice -- price of product which will we removed or added to cart
+    * @param {string} action  -- cart total price will be add or sub on the the basis of this value
     * @return {undefined} 
     */
     cartTotalPriceUpdater(newitemPrice, action) {
@@ -82,8 +86,8 @@ class App extends React.Component {
 
     /**
         * Manage number of items in the cart with help of array
-        * @param {string} action
-        * @param {Object} cartItemDataObj
+        * @param {string} action --product  will be add or delete from cart base on this value
+        * @param {Object} cartItemDataObj -- product data which will be removed or add in cart based on action
         * @return {undefined} 
     */
     selectedItemCartListHandler(action, cartItemDataObj) {
